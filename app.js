@@ -52,3 +52,16 @@ for(let i=0; i<arr.length; i++){
 console.log(res);
 
 // for (let i = 0; i < arr.length; i += 2)
+
+// Largest element in an Array
+let arr1=[10,20,40,50,60,80,70,100,20];
+let max =arr1[0]
+for(let i=0; i<arr1.length; i++)
+    {
+        if(arr1[i] > max)
+        {
+            max=arr1[i];
+        }
+    }
+console.log(arr1);
+console.log(max);
