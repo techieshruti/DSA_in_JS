@@ -65,3 +65,30 @@ for(let i=0; i<arr1.length; i++)
     }
 console.log(arr1);
 console.log(max);
+
+// 704 binary search 
+let arr6=[10,20,30,40,50,60,70,80];
+let key = 50;
+function getKey(arr6, key)
+{
+  let start=0; let end = arr6.length-1;
+  while(start<=end)
+  {
+    let mid = Math.floor((start+end)/2);
+    if(arr6[mid] == key)
+    {
+      return mid;
+    }
+    else if(arr6[mid]< key)
+    {
+      start= start+1;
+    }
+    else
+    {
+      end=mid-1;
+    }
+    
+  }
+  return -1;
+}
+console.log("index of key is "+ getKey(arr6, key));
