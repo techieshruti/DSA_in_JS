@@ -92,3 +92,19 @@ function getKey(arr6, key)
   return -1;
 }
 console.log("index of key is "+ getKey(arr6, key));
+
+// Second Largest Element in an Array
+// let arr1=[10,20,40,50,60,80,70,100,20];
+let largest = -1; let secondLargest=-1;
+for(let num of arr1){
+  if(num > largest)
+    {
+      secondLargest=largest;
+      largest = num;
+    }
+    else if(num > secondLargest && num !=largest)
+    {
+      secondLargest =num;
+    }
+}
+console.log(secondLargest);
