@@ -134,37 +134,52 @@
 //  console.log(secondMax);
 //  console.log(thirdMax);
 
- // Largest four distinct elements in an array
+//  // Largest four distinct elements in an array
 
- let arr1=[10,20,40,50,60,80,70,100,20];
- let max = secondMax = thirdMax = fourMax = -1;
+//  let arr1=[10,20,40,50,60,80,70,100,20];
+//  let max = secondMax = thirdMax = fourMax = -1;
 
- for (let num of arr1)
- {
-  if(num > max)
+//  for (let num of arr1)
+//  {
+//   if(num > max)
+//   {
+//     fourMax = thirdMax;
+//     thirdMax = secondMax;
+//     secondMax = max;
+//     max = num;
+//   }
+//   else if(num > secondMax && num != max)
+//   {
+//     fourMax = thirdMax;
+//     thirdMax = secondMax;
+//     secondMax = num;
+//   }
+//   else if(num > thirdMax && num != max && num != secondMax )
+//   {
+//     fourMax = thirdMax;
+//     thirdMax = num;
+//   }
+//   else if(num > fourMax && num != thirdMax && num != max && num != secondMax)
+//   {
+//     fourMax = num;
+//   }
+//  }
+//  console.log(fourMax);
+//  console.log(thirdMax);
+//  console.log(secondMax);
+//  console.log(max);
+
+// Reverse an array
+let arr1=[10,20,40,50,60,80,70,100,20];
+let start = 0; let end = arr1.length-1;
+
+while(start < end)
   {
-    fourMax = thirdMax;
-    thirdMax = secondMax;
-    secondMax = max;
-    max = num;
+    let temp = arr1[end];
+    arr1[end]=arr1[start];
+    arr1[start]=temp;
+
+    start++;
+    end--;
   }
-  else if(num > secondMax && num != max)
-  {
-    fourMax = thirdMax;
-    thirdMax = secondMax;
-    secondMax = num;
-  }
-  else if(num > thirdMax && num != max && num != secondMax )
-  {
-    fourMax = thirdMax;
-    thirdMax = num;
-  }
-  else if(num > fourMax && num != thirdMax && num != max && num != secondMax)
-  {
-    fourMax = num;
-  }
- }
- console.log(fourMax);
- console.log(thirdMax);
- console.log(secondMax);
- console.log(max);
+console.log(arr1);
