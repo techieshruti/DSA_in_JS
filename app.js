@@ -109,27 +109,62 @@
 // }
 // console.log(secondLargest);
 
-// Largest three distinct elements in an array
-let arr1=[10,20,40,50,60,80,70,100,20];
-let max = secondMax = thirdMax = -1;
- for(let num of arr1)
+// // Largest three distinct elements in an array
+// let arr1=[10,20,40,50,60,80,70,100,20];
+// let max = secondMax = thirdMax = -1;
+//  for(let num of arr1)
+//  {
+//   if(num > max)
+//   {
+//     thirdMax = secondMax;
+//     secondMax = max;
+//     max = num;
+//   }
+//   else if(num > secondMax && num != max)
+//   {
+//     thirdMax = secondMax;
+//     secondMax = num;
+//   }
+//   else if(num > thirdMax && num != secondMax){
+//     thirdMax = num;
+//   }
+//  }
+
+//  console.log(max);
+//  console.log(secondMax);
+//  console.log(thirdMax);
+
+ // Largest four distinct elements in an array
+
+ let arr1=[10,20,40,50,60,80,70,100,20];
+ let max = secondMax = thirdMax = fourMax = -1;
+
+ for (let num of arr1)
  {
   if(num > max)
   {
+    fourMax = thirdMax;
     thirdMax = secondMax;
     secondMax = max;
     max = num;
   }
   else if(num > secondMax && num != max)
   {
+    fourMax = thirdMax;
     thirdMax = secondMax;
     secondMax = num;
   }
-  else if(num > thirdMax && num != secondMax){
+  else if(num > thirdMax && num != max && num != secondMax )
+  {
+    fourMax = thirdMax;
     thirdMax = num;
   }
+  else if(num > fourMax && num != thirdMax && num != max && num != secondMax)
+  {
+    fourMax = num;
+  }
  }
-
- console.log(max);
- console.log(secondMax);
+ console.log(fourMax);
  console.log(thirdMax);
+ console.log(secondMax);
+ console.log(max);
