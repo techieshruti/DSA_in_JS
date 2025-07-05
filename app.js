@@ -170,16 +170,32 @@
 //  console.log(max);
 
 // Reverse an array
-let arr1=[10,20,40,50,60,80,70,100,20];
-let start = 0; let end = arr1.length-1;
+// let arr1=[10,20,40,50,60,80,70,100,20];
+// let start = 0; let end = arr1.length-1;
 
-while(start < end)
+// while(start < end)
+//   {
+//     let temp = arr1[end];
+//     arr1[end]=arr1[start];
+//     arr1[start]=temp;
+
+//     start++;
+//     end--;
+//   }
+// console.log(arr1);
+
+// pairs in array
+let array=[10,20,30,40,50];
+function pairsInArray(array)
+{
+  for(let i=0; i<array.length; i++)
   {
-    let temp = arr1[end];
-    arr1[end]=arr1[start];
-    arr1[start]=temp;
-
-    start++;
-    end--;
+    let curr=array[i];
+    for(let j=i+1; j<array.length; j++)
+      {
+        console.log(`\n (${curr}, ${array[j]})`);
+      }
+      console.log(`\n`);
   }
-console.log(arr1);
+}
+pairsInArray(array);
