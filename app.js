@@ -244,30 +244,60 @@
 // printAllSubarrays(array);
 
 // print sum of subarrays
-let array=[10,20,30,40,50];
-let maxSum = -Infinity;
-function subArraySum(array)
-{
-  for(i=0; i<array.length; i++)
-    {
-      let start =i;
-      for(j=start; j<array.length; j++)
-      {
-        let end = j;
-        let str = "";
-        let currSum =0;
-        for(let k = start; k<=end; k++)
-        {
-          str += array[k] + " ";
-          currSum+=array[k];
-        }
-        console.log(` Sum of [ ${str.trim()} ] is = `+currSum);
-        if(maxSum < currSum)
-        {
-          maxSum = currSum;
-        }
-      }
-    }
+// let array=[10,20,30,40,50];
+// let maxSum = -Infinity;
+// function subArraySum(array)
+// {
+//   for(i=0; i<array.length; i++)
+//     {
+//       let start =i;
+//       for(j=start; j<array.length; j++)
+//       {
+//         let end = j;
+//         let str = "";
+//         let currSum =0;
+//         for(let k = start; k<=end; k++)
+//         {
+//           str += array[k] + " ";
+//           currSum+=array[k];
+//         }
+//         console.log(` Sum of [ ${str.trim()} ] is = `+currSum);
+//         if(maxSum < currSum)
+//         {
+//           maxSum = currSum;
+//         }
+//       }
+//     }
+// }
+// subArraySum(array);
+// console.log(`Max subarray sum is = ${maxSum}`)
+
+
+// trapping rain water
+let building = [4, 2, 0, 6, 3, 2, 5];
+let n = building.length;
+
+// Step 1: Create arrays
+let maxLeft = new Array(n); // to store all max left bars
+let maxRight = new Array(n); // to store all max right bars 
+
+// Step 2: Fill maxLeft[]
+maxLeft[0] = building[0];
+for (let i = 1; i < n; i++) {
+  maxLeft[i] = Math.max(building[i], maxLeft[i - 1]); // all values will store in maxleft array.
 }
-subArraySum(array);
-console.log(`Max subarray sum is = ${maxSum}`)
+
+// Step 3: Fill maxRight[]
+maxRight[n - 1] = building[n - 1];
+for (let i = n - 2; i >= 0; i--) {
+  maxRight[i] = Math.max(building[i], maxRight[i + 1]);
+}
+
+// Step 4: Calculate trapped water
+let trappedWater = 0;
+for (let i = 0; i < n; i++) {
+  let waterLevel = Math.min(maxLeft[i], maxRight[i]);
+  trappedWater += waterLevel - building[i];
+}
+
+console.log(trappedWater);  // ✅ Output: 11
