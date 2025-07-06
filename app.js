@@ -185,17 +185,38 @@
 // console.log(arr1);
 
 // pairs in array
+// let array=[10,20,30,40,50];
+// function pairsInArray(array)
+// {
+//   for(let i=0; i<array.length; i++)
+//   {
+//     let curr=array[i];
+//     for(let j=i+1; j<array.length; j++)
+//       {
+//         console.log(`(${curr}, ${array[j]})`);
+//       }
+//       console.log(`\n`);
+//   }
+// }
+// pairsInArray(array);
+
+// print subarrays
 let array=[10,20,30,40,50];
-function pairsInArray(array)
+function getSubArray(array)
 {
-  for(let i=0; i<array.length; i++)
-  {
-    let curr=array[i];
-    for(let j=i+1; j<array.length; j++)
+  for(i=0; i<array.length; i++)
+    {
+      let start =i;
+      for(j=start; j<array.length; j++)
       {
-        console.log(`\n (${curr}, ${array[j]})`);
+        let end = j;
+        let str = "";
+        for(let k = start; k<=end; k++)
+        {
+          str += array[k] + " ";
+        }
+        console.log(`[ ${str.trim()} ]`);
       }
-      console.log(`\n`);
-  }
+    }
 }
-pairsInArray(array);
+getSubArray(array);
