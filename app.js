@@ -201,25 +201,25 @@
 // pairsInArray(array);
 
 // print subarrays
-let array=[10,20,30,40,50];
-function getSubArray(array)
-{
-  for(i=0; i<array.length; i++)
-    {
-      let start =i;
-      for(j=start; j<array.length; j++)
-      {
-        let end = j;
-        let str = "";
-        for(let k = start; k<=end; k++)
-        {
-          str += array[k] + " ";
-        }
-        console.log(`[ ${str.trim()} ]`);
-      }
-    }
-}
-getSubArray(array);
+// let array=[10,20,30,40,50];
+// function getSubArray(array)
+// {
+//   for(i=0; i<array.length; i++)
+//     {
+//       let start =i;
+//       for(j=start; j<array.length; j++)
+//       {
+//         let end = j;
+//         let str = "";
+//         for(let k = start; k<=end; k++)
+//         {
+//           str += array[k] + " ";
+//         }
+//         console.log(`[ ${str.trim()} ]`);
+//       }
+//     }
+// }
+// getSubArray(array);
 
 // optimized version of print subaray
 // let array = [10, 20, 30, 40, 50];
@@ -242,3 +242,26 @@ getSubArray(array);
 // }
 
 // printAllSubarrays(array);
+
+// print sum of subarrays
+let array=[10,20,30,40,50];
+function getSubArray(array)
+{
+  for(i=0; i<array.length; i++)
+    {
+      let start =i;
+      for(j=start; j<array.length; j++)
+      {
+        let end = j;
+        let str = "";
+        let currSum =0;
+        for(let k = start; k<=end; k++)
+        {
+          str += array[k] + " ";
+          currSum+=array[k];
+        }
+        console.log(` Sum of [ ${str.trim()} ] is = `+currSum);
+      }
+    }
+}
+getSubArray(array);
