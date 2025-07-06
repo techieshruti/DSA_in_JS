@@ -220,3 +220,25 @@ function getSubArray(array)
     }
 }
 getSubArray(array);
+
+// optimized version of print subaray
+// let array = [10, 20, 30, 40, 50];
+
+// function printAllSubarrays(arr) {
+//   const n = arr.length;
+
+//   for (let start = 0; start < n; start++) {
+//     for (let end = start; end < n; end++) {
+//       let subarray = "";
+
+//       for (let k = start; k <= end; k++) {
+//         subarray += arr[k];
+//         if (k < end) subarray += ", ";
+//       }
+
+//       console.log(`[${subarray}]`);
+//     }
+//   }
+// }
+
+// printAllSubarrays(array);
