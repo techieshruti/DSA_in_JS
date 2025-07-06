@@ -245,7 +245,8 @@
 
 // print sum of subarrays
 let array=[10,20,30,40,50];
-function getSubArray(array)
+let maxSum = -Infinity;
+function subArraySum(array)
 {
   for(i=0; i<array.length; i++)
     {
@@ -261,7 +262,12 @@ function getSubArray(array)
           currSum+=array[k];
         }
         console.log(` Sum of [ ${str.trim()} ] is = `+currSum);
+        if(maxSum < currSum)
+        {
+          maxSum = currSum;
+        }
       }
     }
 }
-getSubArray(array);
+subArraySum(array);
+console.log(`Max subarray sum is = ${maxSum}`)
