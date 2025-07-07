@@ -329,20 +329,40 @@
 
 //Buy and Sell Stocks only hold at most one share of the stock at any time
 
-let price = [7,1,5,3,6,4];
-let maxProfit = 0;
+// let price = [7,1,5,3,6,4];
+// let maxProfit = 0;
 
-function buyAndSellStocks(price)
+// function buyAndSellStocks(price)
+// {
+//   for(let i =1; i<price.length; i++)
+//   {
+//     if(price[i-1] < price[i])
+//     {
+//       let profit = price[i] - price[i-1];
+//       maxProfit += profit;
+//     }
+//   }
+//   return maxProfit;
+// }
+
+// console.log(buyAndSellStocks(price));
+
+//Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct
+let num = [1, 2, 3, 1];
+
+function duplicate(num)
 {
-  for(let i =1; i<price.length; i++)
+  for(let i =0; i<num.length; i++)
+{
+  for(let j = i+1; j<num.length; j++)
   {
-    if(price[i-1] < price[i])
+    if(num[i] == num[j])
     {
-      let profit = price[i] - price[i-1];
-      maxProfit += profit;
+      return true;
     }
   }
-  return maxProfit;
+}
+  return false;
 }
 
-console.log(buyAndSellStocks(price));
+console.log(duplicate(num));
