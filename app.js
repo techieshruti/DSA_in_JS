@@ -310,7 +310,7 @@ let maxProfit = 0;
 
 function buyAndSellStocks(currentPrice)
 {
-  for(let i=0; i<currentPrice.length-1; i++)
+  for(let i=0; i<currentPrice.length; i++)
     {
       if(buyPrice < currentPrice[i])
         {
