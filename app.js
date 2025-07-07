@@ -274,30 +274,55 @@
 
 
 // trapping rain water
-let building = [4, 2, 0, 6, 3, 2, 5];
-let n = building.length;
+// let building = [4, 2, 0, 6, 3, 2, 5];
+// let n = building.length;
 
-// Step 1: Create arrays
-let maxLeft = new Array(n); // to store all max left bars
-let maxRight = new Array(n); // to store all max right bars 
+// // Step 1: Create arrays
+// let maxLeft = new Array(n); // to store all max left bars
+// let maxRight = new Array(n); // to store all max right bars 
 
-// Step 2: Fill maxLeft[]
-maxLeft[0] = building[0];
-for (let i = 1; i < n; i++) {
-  maxLeft[i] = Math.max(building[i], maxLeft[i - 1]); // all values will store in maxleft array.
+// // Step 2: Fill maxLeft[]
+// maxLeft[0] = building[0];
+// for (let i = 1; i < n; i++) {
+//   maxLeft[i] = Math.max(building[i], maxLeft[i - 1]); // all values will store in maxleft array.
+// }
+
+// // Step 3: Fill maxRight[]
+// maxRight[n - 1] = building[n - 1];
+// for (let i = n - 2; i >= 0; i--) {
+//   maxRight[i] = Math.max(building[i], maxRight[i + 1]);
+// }
+
+// // Step 4: Calculate trapped water
+// let trappedWater = 0;
+// for (let i = 0; i < n; i++) {
+//   let waterLevel = Math.min(maxLeft[i], maxRight[i]);
+//   trappedWater += waterLevel - building[i];
+// }
+
+// console.log(trappedWater);  // ✅ Output: 11
+
+
+//Buy and Sell Stocks
+let currentPrice = [7,1,5,3,6,4];  //current Price = selling price
+let buyPrice = +Infinity;
+let maxProfit = 0;
+
+function buyAndSellStocks(currentPrice)
+{
+  for(let i=0; i<currentPrice.length-1; i++)
+    {
+      if(buyPrice < currentPrice[i])
+        {
+          profit = currentPrice[i] - buyPrice;
+          maxProfit=Math.max(maxProfit,profit);
+        }
+        else
+        {
+          buyPrice = currentPrice[i];
+        }
+    }
+    return maxProfit;
 }
 
-// Step 3: Fill maxRight[]
-maxRight[n - 1] = building[n - 1];
-for (let i = n - 2; i >= 0; i--) {
-  maxRight[i] = Math.max(building[i], maxRight[i + 1]);
-}
-
-// Step 4: Calculate trapped water
-let trappedWater = 0;
-for (let i = 0; i < n; i++) {
-  let waterLevel = Math.min(maxLeft[i], maxRight[i]);
-  trappedWater += waterLevel - building[i];
-}
-
-console.log(trappedWater);  // ✅ Output: 11
+console.log(buyAndSellStocks(currentPrice));
