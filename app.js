@@ -304,25 +304,45 @@
 
 
 //Buy and Sell Stocks
-let currentPrice = [7,1,5,3,6,4];  //current Price = selling price
-let buyPrice = +Infinity;
+// let currentPrice = [7,1,5,3,6,4];  //current Price = selling price
+// let buyPrice = +Infinity;
+// let maxProfit = 0;
+
+// function buyAndSellStocks(currentPrice)
+// {
+//   for(let i=0; i<currentPrice.length; i++)
+//     {
+//       if(buyPrice < currentPrice[i])
+//         {
+//           profit = currentPrice[i] - buyPrice;
+//           maxProfit=Math.max(maxProfit,profit);
+//         }
+//         else
+//         {
+//           buyPrice = currentPrice[i];
+//         }
+//     }
+//     return maxProfit;
+// }
+
+// console.log(buyAndSellStocks(currentPrice));
+
+//Buy and Sell Stocks only hold at most one share of the stock at any time
+
+let price = [7,1,5,3,6,4];
 let maxProfit = 0;
 
-function buyAndSellStocks(currentPrice)
+function buyAndSellStocks(price)
 {
-  for(let i=0; i<currentPrice.length; i++)
+  for(let i =1; i<price.length; i++)
+  {
+    if(price[i-1] < price[i])
     {
-      if(buyPrice < currentPrice[i])
-        {
-          profit = currentPrice[i] - buyPrice;
-          maxProfit=Math.max(maxProfit,profit);
-        }
-        else
-        {
-          buyPrice = currentPrice[i];
-        }
+      let profit = price[i] - price[i-1];
+      maxProfit += profit;
     }
-    return maxProfit;
+  }
+  return maxProfit;
 }
 
-console.log(buyAndSellStocks(currentPrice));
+console.log(buyAndSellStocks(price));
