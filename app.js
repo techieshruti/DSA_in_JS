@@ -46,7 +46,7 @@
 //     if(i % 2 == 0)
 //     {
 //         res.push(arr[i]);
-        
+
 //     }
 // }
 // console.log(res);
@@ -66,7 +66,7 @@
 // console.log(arr1);
 // console.log(max);
 
-// // 704 binary search 
+// // 704 binary search
 // let arr6=[10,20,30,40,50,60,70,80];
 // let key = 50;
 // function getKey(arr6, key)
@@ -87,7 +87,7 @@
 //     {
 //       end=mid-1;
 //     }
-    
+
 //   }
 //   return -1;
 // // }
@@ -272,14 +272,13 @@
 // subArraySum(array);
 // console.log(`Max subarray sum is = ${maxSum}`)
 
-
 // trapping rain water
 // let building = [4, 2, 0, 6, 3, 2, 5];
 // let n = building.length;
 
 // // Step 1: Create arrays
 // let maxLeft = new Array(n); // to store all max left bars
-// let maxRight = new Array(n); // to store all max right bars 
+// let maxRight = new Array(n); // to store all max right bars
 
 // // Step 2: Fill maxLeft[]
 // maxLeft[0] = building[0];
@@ -301,7 +300,6 @@
 // }
 
 // console.log(trappedWater);  // ✅ Output: 11
-
 
 //Buy and Sell Stocks
 // let currentPrice = [7,1,5,3,6,4];  //current Price = selling price
@@ -348,21 +346,41 @@
 // console.log(buyAndSellStocks(price));
 
 //Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct
-let num = [1, 2, 3, 1];
+// let num = [1, 2, 3, 1];
 
-function duplicate(num)
-{
-  for(let i =0; i<num.length; i++)
-{
-  for(let j = i+1; j<num.length; j++)
-  {
-    if(num[i] == num[j])
-    {
-      return true;
+// function duplicate(num)
+// {
+//   for(let i =0; i<num.length; i++)
+// {
+//   for(let j = i+1; j<num.length; j++)
+//   {
+//     if(num[i] == num[j])
+//     {
+//       return true;
+//     }
+//   }
+// }
+//   return false;
+// }
+
+// console.log(duplicate(num));
+
+// Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1   if it is not in nums
+let nums = [4, 5, 6, 7, 0, 1, 2];
+let target = 0;
+
+function findTargetAndPrintBefore(nums) {
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] == target) {
+      console.log("index of target is " + i);
+
+      // Print all elements before i, in reverse order
+      for (let j = i - 1; j >= 0; j--) {
+        console.log(nums[j]);
+      }
     }
   }
-}
-  return false;
+  return -1;
 }
 
-console.log(duplicate(num));
+console.log(findTargetAndPrintBefore(nums));
