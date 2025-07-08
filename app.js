@@ -432,22 +432,44 @@
 
 // Leetcode 169: find Majority element that appears n/2 times where n is number of element in array
 
-let num = [3, 3, 8, 5, 6, 8, 8, 8, 8];
-let n = num.length;
+// let num = [3, 3, 8, 5, 6, 8, 8, 8, 8];
+// let n = num.length;
 
-function getMajorityElement(num) {
-  for (let i = 0; i < n; i++) {
-    let count = 0;
-    for (let j = 0; j < n; j++) {
-      if (num[j] === num[i]) {
-        count++;
-      }
-    }
-    if (count > Math.floor(n / 2)) {
-      return num[i];
+// function getMajorityElement(num) {
+//   for (let i = 0; i < n; i++) {
+//     let count = 0;
+//     for (let j = 0; j < n; j++) {
+//       if (num[j] === num[i]) {
+//         count++;
+//       }
+//     }
+//     if (count > Math.floor(n / 2)) {
+//       return num[i];
+//     }
+//   }
+//   return "No majority element found";
+// }
+
+// console.log(getMajorityElement(num));
+
+// 229. Majority Element II  find all elements that appear more than ⌊ n/3 ⌋ times.
+let nums =[1, 2, 3, 1, 2, 1];
+function majorityElement(nums) {
+  let n = nums.length;
+  let freq = {};
+  let result = [];
+
+  for (let num of nums) {
+    freq[num] = (freq[num] || 0) + 1;
+  }
+
+  for (let key in freq) {
+    if (freq[key] > Math.floor(n / 3)) {
+      result.push(Number(key));
     }
   }
-  return "No majority element found";
+
+  return result;
 }
 
-console.log(getMajorityElement(num));
+console.log(majorityElement(nums));
