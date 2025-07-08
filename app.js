@@ -366,21 +366,42 @@
 // console.log(duplicate(num));
 
 // Given the array nums after the possible rotation and an integer target, return the index of target if it is in nums, or -1   if it is not in nums
-let nums = [4, 5, 6, 7, 0, 1, 2];
-let target = 0;
+// let nums = [4, 5, 6, 7, 0, 1, 2];
+// let target = 0;
 
-function findTargetAndPrintBefore(nums) {
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] == target) {
-      console.log("index of target is " + i);
+// function findTargetAndPrintBefore(nums) {
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] == target) {
+//       console.log("index of target is " + i);
 
-      // Print all elements before i, in reverse order
-      for (let j = i - 1; j >= 0; j--) {
-        console.log(nums[j]);
+//       // Print all elements before i, in reverse order
+//       for (let j = i - 1; j >= 0; j--) {
+//         console.log(nums[j]);
+//       }
+//     }
+//   }
+//   return -1;
+// }
+
+// console.log(findTargetAndPrintBefore(nums));
+
+//Bubble Sort
+let arr=[5,4,1,3,2];
+function bubbleSort(arr)
+{
+  for(i=0; i<arr.length-1; i++)
+  {
+    for(j=0; j<arr.length-1-i; j++)
+    {
+      if(arr[j] > arr[j+1])
+      {
+        let temp = arr[j+1];
+        arr[j+1] = arr[j];
+        arr[j] = temp;
       }
     }
   }
-  return -1;
+  return arr;
 }
 
-console.log(findTargetAndPrintBefore(nums));
+console.log(bubbleSort(arr));
