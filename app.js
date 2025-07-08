@@ -386,22 +386,46 @@
 // console.log(findTargetAndPrintBefore(nums));
 
 //Bubble Sort
+// let arr=[5,4,1,3,2];
+// function bubbleSort(arr)
+// {
+//   for(i=0; i<arr.length-1; i++)
+//   {
+//     for(j=0; j<arr.length-1-i; j++)
+//     {
+//       if(arr[j] > arr[j+1])
+//       {
+//         let temp = arr[j+1];
+//         arr[j+1] = arr[j];
+//         arr[j] = temp;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// console.log(bubbleSort(arr));
+
+// selection sort
 let arr=[5,4,1,3,2];
-function bubbleSort(arr)
+
+function selectionSort(arr)
 {
-  for(i=0; i<arr.length-1; i++)
+  let minPos = i;
+  for(let i=0; i<arr.length-1; i++)
   {
-    for(j=0; j<arr.length-1-i; j++)
+    for(let j=i+1; j<arr.length; j++)
     {
-      if(arr[j] > arr[j+1])
+      if(arr[j] < arr[minPos])
       {
-        let temp = arr[j+1];
-        arr[j+1] = arr[j];
-        arr[j] = temp;
+        minPos=j;
       }
     }
+    let temp = arr[i];
+    arr[i] = arr[minPos];
+    arr[minPos] = temp;
   }
   return arr;
 }
 
-console.log(bubbleSort(arr));
+console.log(selectionSort(arr));
