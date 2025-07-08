@@ -407,25 +407,47 @@
 // console.log(bubbleSort(arr));
 
 // selection sort
-let arr=[5,4,1,3,2];
+// let arr=[5,4,1,3,2];
 
-function selectionSort(arr)
-{
-  let minPos = i;
-  for(let i=0; i<arr.length-1; i++)
-  {
-    for(let j=i+1; j<arr.length; j++)
-    {
-      if(arr[j] < arr[minPos])
-      {
-        minPos=j;
+// function selectionSort(arr)
+// {
+//   let minPos = i;
+//   for(let i=0; i<arr.length-1; i++)
+//   {
+//     for(let j=i+1; j<arr.length; j++)
+//     {
+//       if(arr[j] < arr[minPos])
+//       {
+//         minPos=j;
+//       }
+//     }
+//     let temp = arr[i];
+//     arr[i] = arr[minPos];
+//     arr[minPos] = temp;
+//   }
+//   return arr;
+// }
+
+// console.log(selectionSort(arr));
+
+// Leetcode 169: find Majority element that appears n/2 times where n is number of element in array
+
+let num = [3, 3, 8, 5, 6, 8, 8, 8, 8];
+let n = num.length;
+
+function getMajorityElement(num) {
+  for (let i = 0; i < n; i++) {
+    let count = 0;
+    for (let j = 0; j < n; j++) {
+      if (num[j] === num[i]) {
+        count++;
       }
     }
-    let temp = arr[i];
-    arr[i] = arr[minPos];
-    arr[minPos] = temp;
+    if (count > Math.floor(n / 2)) {
+      return num[i];
+    }
   }
-  return arr;
+  return "No majority element found";
 }
 
-console.log(selectionSort(arr));
+console.log(getMajorityElement(num));
