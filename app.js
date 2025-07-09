@@ -486,5 +486,5 @@ function containsDuplicate(nums) {
         seen.add(num); // Add to seen
     }
 
-    return false; // No duplicates
+    return false;
 }
