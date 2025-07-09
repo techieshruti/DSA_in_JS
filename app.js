@@ -453,23 +453,38 @@
 // console.log(getMajorityElement(num));
 
 // 229. Majority Element II  find all elements that appear more than ⌊ n/3 ⌋ times.
-let nums =[1, 2, 3, 1, 2, 1];
-function majorityElement(nums) {
-  let n = nums.length;
-  let freq = {};
-  let result = [];
+// let nums =[1, 2, 3, 1, 2, 1];
+// function majorityElement(nums) {
+//   let n = nums.length;
+//   let freq = {};
+//   let result = [];
 
-  for (let num of nums) {
-    freq[num] = (freq[num] || 0) + 1;
-  }
+//   for (let num of nums) {
+//     freq[num] = (freq[num] || 0) + 1;
+//   }
 
-  for (let key in freq) {
-    if (freq[key] > Math.floor(n / 3)) {
-      result.push(Number(key));
+//   for (let key in freq) {
+//     if (freq[key] > Math.floor(n / 3)) {
+//       result.push(Number(key));
+//     }
+//   }
+
+//   return result;
+// }
+
+// console.log(majorityElement(nums));
+
+
+// LeetCode 217 : Contains Duplicate
+function containsDuplicate(nums) {
+    let seen = new Set();
+
+    for (let num of nums) {
+        if (seen.has(num)) {
+            return true; // Duplicate found
+        }
+        seen.add(num); // Add to seen
     }
-  }
 
-  return result;
+    return false; // No duplicates
 }
-
-console.log(majorityElement(nums));
