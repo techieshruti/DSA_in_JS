@@ -476,15 +476,46 @@
 
 
 // LeetCode 217 : Contains Duplicate
-function containsDuplicate(nums) {
-    let seen = new Set();
+// function containsDuplicate(nums) {
+//     let seen = new Set();
 
-    for (let num of nums) {
-        if (seen.has(num)) {
-            return true; // Duplicate found
-        }
-        seen.add(num); // Add to seen
+//     for (let num of nums) {
+//         if (seen.has(num)) {
+//             return true; // Duplicate found
+//         }
+//         seen.add(num); // Add to seen
+//     }
+
+//     return false;
+// }
+
+// 33. Search in Rotated Sorted Array
+function search(nums, target) {
+  let low = 0;
+  let high = nums.length - 1;
+
+  while (low <= high) {
+    let mid = Math.floor((low + high) / 2);
+
+    if (nums[mid] === target) return mid;
+
+    // Check if the left half is sorted
+    if (nums[low] <= nums[mid]) {
+      if (nums[low] <= target && target < nums[mid]) {
+        high = mid - 1;
+      } else {
+        low = mid + 1;
+      }
     }
+    // Right half is sorted
+    else {
+      if (nums[mid] < target && target <= nums[high]) {
+        low = mid + 1;
+      } else {
+        high = mid - 1;
+      }
+    }
+  }
 
-    return false;
+  return -1;
 }
