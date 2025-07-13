@@ -519,3 +519,31 @@ function search(nums, target) {
 
   return -1;
 }
+
+
+//11. Container With Most Water
+
+var maxArea = function(height) {
+    let maxWater = 0;
+    let left = 0;
+    let right = height.length - 1;
+
+    while (left < right) {
+        // Calculate the current area
+        let currentHeight = Math.min(height[left], height[right]);
+        let width = right - left;
+        let currentArea = currentHeight * width;
+
+        // Update max area if current is larger
+        maxWater = Math.max(maxWater, currentArea);
+
+        // Move the pointer with smaller height
+        if (height[left] < height[right]) {
+            left++;
+        } else {
+            right--;
+        }
+    }
+
+    return maxWater;
+};
