@@ -6,7 +6,7 @@
 // So 4498 / 10 = 449.8. To get only the integer part we have used Math.floor() which return only greatest integer part.
 // Loop will run untill the number get 0.
 
-console.log("\n== Digit Extraction from given number ==\n");
+console.log(" \n== Digit Extraction from given number ==\n");
 let num = 4498;
 while(num>0)
 {
