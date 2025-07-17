@@ -14,3 +14,7 @@ while(num>0)
     console.log(lastDigit);
     num = Math.floor(num / 10);
 }
+console.log(num);
+
+// Time Complexity = O(log10N)
+// Space Complexity = O(1)
