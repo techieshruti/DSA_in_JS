@@ -1,4 +1,4 @@
-// ARMSTRONG NUMBER means sum of cube of individual digits is equivalent to the number itselt.
+// ARMSTRONG NUMBER is number which is equal to the sum of the digits of the number, raised to the power of the number of digits.
 
 // step 1 : declare a number, another variable to store the number because throughout the program the value of number will changed to 0, variable to store the sum of digits.
 // step 2 : place a while loop, it will run untill the number become 0.
@@ -12,11 +12,11 @@
 let num = 371;
 let dupp = num;
 let sum =0;
-
+let count = Math.floor(Math.log10(num)) +1;
 while(num>0)
 {
     let lastDigit = num % 10;
-    sum = sum + Math.pow(lastDigit, 3);
+    sum = sum + Math.pow(lastDigit, count);
     num = Math.floor(num / 10);
 }
 console.log(`sum of ${dupp} is ${sum}`);
