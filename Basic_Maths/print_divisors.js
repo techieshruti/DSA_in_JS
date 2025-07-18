@@ -17,3 +17,18 @@ for(let i =1 ; i<=num; i++)
 
 // Time Complexity = O(n)
 // Space Complexity = O(1)
+
+console.log("\n====Optimal approach====\n")
+let number = 36;
+
+for (let i = 1; i <= Math.sqrt(number); i++) {
+    if (number % i === 0) {
+        console.log(i);  // i is a divisor
+        if (i !== number / i) {
+            console.log(number / i);  // paired divisor
+        }
+    }
+}
+
+// Time Complexity = O(√n)
+
