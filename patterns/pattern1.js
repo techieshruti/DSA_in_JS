@@ -16,3 +16,6 @@ for(let i=0; i<5; i++)
     }
     console.log(res);
 }
+
+// Time Complexity - O((n^2)
+// Space Complexity - O(1)
