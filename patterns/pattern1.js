@@ -1,4 +1,4 @@
-// PATTERN 1
+// PATTERN #1 where rows and coloumns are same
 
 // first loop is iterating to column and second loop is printing rows.
 
