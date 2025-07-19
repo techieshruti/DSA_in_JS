@@ -1,4 +1,4 @@
-// Pattern #3 where columns are increasing according to row size and print numeric values
+// Pattern #4 where columns are increasing according to row size and print numeric values
 // outer loop is pointing to column and inner loop is pointing rows.
 
 // step 1: create a outer loop which will go from 1 to i<=n
